@@ -2,16 +2,25 @@ package com.example.miniprojectandroid.transaction_classes;
 
 public class Transaction {
     private int id, account;
-    private String date, type;
+    private String date;
     private double amount, balance;
+    private TransactionType type;
 
-    public Transaction(int id, int account, String date, String type, double amount, double balance) {
+    public Transaction(int id, int account, String date, double amount, double balance, TransactionType type) {
         this.id = id;
         this.account = account;
         this.date = date;
-        this.type = type;
         this.amount = amount;
         this.balance = balance;
+        this.type = type;
+    }
+
+    public TransactionType getType() {
+        return type;
+    }
+
+    public void setType(TransactionType type) {
+        this.type = type;
     }
 
     public int getId() {
@@ -36,14 +45,6 @@ public class Transaction {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public double getAmount() {
