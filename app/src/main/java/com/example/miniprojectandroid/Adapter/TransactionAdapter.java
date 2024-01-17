@@ -9,16 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.miniprojectandroid.R;
+import com.example.miniprojectandroid.listener.TransactionItemListener;
 import com.example.miniprojectandroid.transaction_classes.Transaction;
 
 import java.util.ArrayList;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.TransactionHolder> {
 
-    ArrayList<Transaction> transactions;
+    private static ArrayList<Transaction> transactions;
+    private static TransactionItemListener transactionItemListener;
 
-    public TransactionAdapter(ArrayList<Transaction> transactions){
+    public TransactionAdapter(ArrayList<Transaction> transactions, TransactionItemListener transactionItemListener){
         this.transactions = transactions;
+        this.transactionItemListener = transactionItemListener;
     }
 
     @NonNull
@@ -45,7 +48,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         return transactions.size();
     }
 
-    public static class  TransactionHolder extends RecyclerView.ViewHolder {
+    public static class TransactionHolder extends RecyclerView.ViewHolder {
 
         TextView transactionIDTextView;
         TextView transactionDateTextView;
@@ -57,16 +60,14 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         public TransactionHolder(@NonNull View itemView){
             super(itemView);
-
+    itemView.setOnClickListener(v -> { transactionItemListener.onTransactionItemClicked(transactions.get(getAdapterPosition()));
+    });
             transactionIDTextView = itemView.findViewById(R.id.transactionIDTextView);
             transactionDateTextView = itemView.findViewById(R.id.transactionDateTextView);
             transactionTypeTextView = itemView.findViewById(R.id.transactionTypeTextView);
             transactiomAmountTextView = itemView.findViewById(R.id.transactiomAmountTextView);
             transactionBalanceTextView = itemView.findViewById(R.id.transactionBalanceTextView);
             transactionAccountTextView = itemView.findViewById(R.id.transactionAccountTextView);
-
-
-
         }
     }
 }
