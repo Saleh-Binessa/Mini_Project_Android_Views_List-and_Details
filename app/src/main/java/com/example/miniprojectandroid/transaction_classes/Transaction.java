@@ -1,6 +1,8 @@
 package com.example.miniprojectandroid.transaction_classes;
 
-public class Transaction {
+import java.io.Serializable;
+
+public class Transaction implements Serializable {
     private int id, account;
     private String date;
     private double amount;
