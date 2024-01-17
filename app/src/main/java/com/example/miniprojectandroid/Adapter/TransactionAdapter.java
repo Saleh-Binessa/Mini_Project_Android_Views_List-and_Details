@@ -37,23 +37,18 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.transactionDateTextView.setText(String.valueOf(transactions.get(position).getDate()));
         holder.transactionTypeTextView.setText(String.valueOf(transactions.get(position).getType()));
         holder.transactiomAmountTextView.setText(String.valueOf(transactions.get(position).getAmount()));
-
     }
-
     @Override
     public int getItemCount() {
         return transactions.size();
     }
-
     public static class  TransactionHolder extends RecyclerView.ViewHolder {
-
         TextView transactionIDTextView;
         TextView transactionDateTextView;
         TextView transactionTypeTextView;
         TextView transactiomAmountTextView;
         TextView transactionBalanceTextView;
         TextView transactionAccountTextView;
-
 
         public TransactionHolder(@NonNull View itemView){
             super(itemView);
