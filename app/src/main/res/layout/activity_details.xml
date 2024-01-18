@@ -1,86 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    android:layout_height="125dp"
+    android:background="@android:drawable/alert_dark_frame"
+    android:backgroundTint="#434141"
+    android:backgroundTintMode="screen"
+    tools:actionBarNavMode="standard">
+
+  <TextView
+      android:id="@+id/transactiomAmountTextView"
+      android:layout_width="50dp"
+      android:layout_height="24dp"
+      android:fontFamily="@font/enriqueta"
+      android:gravity="center"
+      android:text="amt"
+      android:textColor="#FFFFFF"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.63"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.43" />
+
   <TextView
       android:id="@+id/transactionIDTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="id"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toTopOf="@+id/transactionDateTextView"
+      android:layout_marginTop="8dp"
+      android:fontFamily="@font/enriqueta"
+      android:text="transactionID"
+      android:textColor="#FFFFFF"
+      android:textSize="16sp"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="0.03"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.38" />
 
   <TextView
       android:id="@+id/transactionDateTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:fontFamily="@font/enriqueta"
+      android:gravity="center"
       android:text="Date"
-      android:textSize="24sp"
+      android:textColor="#FFFFFF"
+      android:textSize="12sp"
       android:textStyle="bold"
-      app:layout_constraintBottom_toTopOf="@+id/transactionTypeTextView"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="0.04"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/transactionIDTextView" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.13" />
 
   <TextView
       android:id="@+id/transactionTypeTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="id"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toTopOf="@+id/transactiomAmountTextView"
+      android:fontFamily="@font/enriqueta"
+      android:gravity="center"
+      android:text="type"
+      android:textColor="#FFFFFF"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="0.36"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/transactionDateTextView" />
-
-  <TextView
-      android:id="@+id/transactiomAmountTextView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="id"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toTopOf="@+id/transactionBalanceTextView"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/transactionTypeTextView" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.45999998" />
 
   <TextView
       android:id="@+id/transactionBalanceTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="id"
-      android:textSize="24sp"
+      android:fontFamily="@font/enriqueta"
+      android:gravity="center"
+      android:text="bal"
+      android:textColor="#FFFFFF"
+      android:textSize="20sp"
       android:textStyle="bold"
-      app:layout_constraintBottom_toTopOf="@+id/transactionAccountTextView"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/transactiomAmountTextView" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.88" />
 
   <TextView
       android:id="@+id/transactionAccountTextView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="id"
-      android:textSize="24sp"
-      android:textStyle="bold"
+      android:fontFamily="@font/enriqueta"
+      android:gravity="center"
+      android:text="account"
+      android:textColor="#FFFFFF"
+      android:textSize="16sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_bias="0.9"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/transactionBalanceTextView" />
-  </androidx.constraintlayout.widget.ConstraintLayout>
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.48000002" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
