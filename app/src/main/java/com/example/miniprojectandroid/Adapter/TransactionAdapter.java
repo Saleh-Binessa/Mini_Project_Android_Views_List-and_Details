@@ -15,11 +15,10 @@ import com.example.miniprojectandroid.transaction_classes.Transaction;
 import java.util.ArrayList;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.TransactionHolder> {
-
     private static ArrayList<Transaction> transactions;
     private static TransactionItemListener transactionItemListener;
 
-    public TransactionAdapter(ArrayList<Transaction> transactions, TransactionItemListener transactionItemListener){
+    public TransactionAdapter(ArrayList<Transaction> transactions, TransactionItemListener transactionItemListener) {
         this.transactions = transactions;
         this.transactionItemListener = transactionItemListener;
     }
@@ -27,20 +26,18 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @NonNull
     @Override
     public TransactionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.transaction_card,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.transaction_card, parent, false);
         return new TransactionHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull TransactionHolder holder, int position) {
-//        Transaction transaction = transactions.get(position);
         holder.transactionIDTextView.setText(String.valueOf(transactions.get(position).getId()));
         holder.transactionAccountTextView.setText(String.valueOf(transactions.get(position).getAccount()));
         holder.transactionBalanceTextView.setText(String.valueOf(transactions.get(position).getBalance()));
         holder.transactionDateTextView.setText(String.valueOf(transactions.get(position).getDate()));
         holder.transactionTypeTextView.setText(String.valueOf(transactions.get(position).getType()));
         holder.transactiomAmountTextView.setText(String.valueOf(transactions.get(position).getAmount()));
-
     }
 
     @Override
@@ -49,7 +46,6 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     }
 
     public static class TransactionHolder extends RecyclerView.ViewHolder {
-
         TextView transactionIDTextView;
         TextView transactionDateTextView;
         TextView transactionTypeTextView;
@@ -57,11 +53,11 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         TextView transactionBalanceTextView;
         TextView transactionAccountTextView;
 
-
-        public TransactionHolder(@NonNull View itemView){
+        public TransactionHolder(@NonNull View itemView) {
             super(itemView);
-    itemView.setOnClickListener(v -> { transactionItemListener.onTransactionItemClicked(transactions.get(getAdapterPosition()));
-    });
+            itemView.setOnClickListener(v -> {
+                transactionItemListener.onTransactionItemClicked(transactions.get(getAdapterPosition()));
+            });
             transactionIDTextView = itemView.findViewById(R.id.transactionIDTextView);
             transactionDateTextView = itemView.findViewById(R.id.transactionDateTextView);
             transactionTypeTextView = itemView.findViewById(R.id.transactionTypeTextView);

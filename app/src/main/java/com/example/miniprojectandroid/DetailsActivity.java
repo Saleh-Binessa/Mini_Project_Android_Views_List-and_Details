@@ -16,6 +16,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView accountBalance;
     private TextView transactionType;
     private TextView transactionAmount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,4 +38,4 @@ public class DetailsActivity extends AppCompatActivity {
         transactionAmount.setText(String.valueOf(transaction.getAmount()));
 
     }
- }
+}

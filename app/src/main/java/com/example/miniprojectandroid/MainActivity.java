@@ -18,10 +18,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements TransactionItemListener {
     RecyclerView RecyclerViewTransaction;
-
     ArrayList<Transaction> transactionList;
+    public static final String TRANSACTION_KEY = "TRANSACTION_KEY";
 
-    public static final String TRANSACTION_KEY = "BANK_ACCOUNT_KEY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
